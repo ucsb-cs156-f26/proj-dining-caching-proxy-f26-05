@@ -31,4 +31,10 @@ public class CachedResponse {
   // Times this request path has been served (1 on first cache, incremented on every
   // subsequent cache hit) — feeds the admin endpoint-inventory view (issue #2).
   private long hitCount;
+
+  // Times a request for this path had to be fetched from the upstream UCSB API (a cache miss).
+  // Set to 1 when the path is first fetched and cached. Cached entries currently never expire, so
+  // this only grows past 1 once entries can be removed or refreshed. Entries cached before this
+  // field existed read back as 0.
+  private long missCount;
 }
