@@ -20,4 +20,4 @@ repo_name: "TBD"
 repo: ucsb-cs156-f26/proj-dining-caching-proxy-f26-05
 owner: ucsb-cs156-f26
 repo_name: proj-dining-caching-proxy-f26-05
-pull_requests: []
+pull_requests: [{"author":{"id":"U_kgDOCCbFVA","is_bot":false,"login":"tara-rezaei","name":""},"headRefName":"tara-maven-upgrade-20","number":23,"title":"Upgrade Maven in the Docker build image to remove the sun.misc.Unsafe warning","url":"https://github.com/ucsb-cs156-f26/proj-dining-caching-proxy-f26-05/pull/23"}]
