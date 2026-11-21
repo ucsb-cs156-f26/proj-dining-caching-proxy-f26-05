@@ -1,0 +1,58 @@
+# Local copy of the ucsb-cs156/workflows reusable workflow "10-backend-unit.yml@main",
+# changed only to run on ubuntu-24.04 instead of ubuntu-latest.
+# Why: ubuntu-latest is now Ubuntu 26.04, which the embedded MongoDB
+# library used in tests (flapdoodle) does not support yet, so tests that start
+# embedded Mongo fail. Once the shared workflow is fixed, the callers can point
+# back to ucsb-cs156/workflows and this file can be deleted.
+# This workflow will build a Java project with Maven
+# For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-maven
+# Example invocation with a custom timeout:
+# jobs:
+#   backend-unit:
+#     uses: ucsb-cs156/workflows/.github/workflows/10-backend-unit.yml@main
+#     secrets:
+#       GH_TOKEN: ${{ secrets.GH_TOKEN }}
+#     with:
+#       TIMEOUT: 10
+
+name: "(reusable) 10-backend-unit: Java Unit tests"
+
+on:
+  workflow_call:
+    secrets:
+      GH_TOKEN:
+        required: true
+    inputs:
+      JAVA_DISTRIBUTION:
+        required: false
+        type: string
+        default: 'temurin'
+      TIMEOUT:
+        required: false
+        type: number
+        default: 10
+          
+permissions:
+  contents: write
+  pages: write
+  pull-requests: read
+
+    
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    timeout-minutes: ${{ inputs.TIMEOUT }}
+    
+    steps:
+    - uses: actions/checkout@v7
+    - name: Set up Java (version from .java-version file)
+      uses: actions/setup-java@v6
+      with:
+         distribution: ${{ inputs.JAVA_DISTRIBUTION }} 
+         java-version-file: ./.java-version
+         cache: 'maven'
+         cache-dependency-path: 'pom.xml' 
+  
+    - name: Build with Maven
+      run: mvn -ntp -B test 
+      
