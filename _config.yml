@@ -20,4 +20,4 @@ repo_name: "TBD"
 repo: ucsb-cs156-f26/proj-dining-caching-proxy-f26-05
 owner: ucsb-cs156-f26
 repo_name: proj-dining-caching-proxy-f26-05
-pull_requests: [{"author":{"id":"U_kgDOCCbFVA","is_bot":false,"login":"tara-rezaei","name":""},"headRefName":"tara-flapdoodle-4.33.0","number":25,"title":"Bump flapdoodle embedded Mongo to 4.33.0 (fixes backend CI on Ubuntu 26.04)","url":"https://github.com/ucsb-cs156-f26/proj-dining-caching-proxy-f26-05/pull/25"},{"author":{"id":"U_kgDOCCbFVA","is_bot":false,"login":"tara-rezaei","name":""},"headRefName":"tara-miss-count-18","number":24,"title":"Fix #18: track missCount per cached route in /api/admin/endpoints","url":"https://github.com/ucsb-cs156-f26/proj-dining-caching-proxy-f26-05/pull/24"}]
+pull_requests: [{"author":{"id":"U_kgDOCCbFVA","is_bot":false,"login":"tara-rezaei","name":""},"headRefName":"tara-miss-count-18","number":24,"title":"Fix #18: track missCount per cached route in /api/admin/endpoints","url":"https://github.com/ucsb-cs156-f26/proj-dining-caching-proxy-f26-05/pull/24"}]
