@@ -81,6 +81,7 @@ public class DiningProxyService {
               .responseStatus(upstreamResponse.getStatusCode().value())
               .responseBody(upstreamResponse.getBody())
               .hitCount(1)
+              .missCount(1)
               .build());
     }
 
